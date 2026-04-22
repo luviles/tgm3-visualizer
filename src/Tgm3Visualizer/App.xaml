@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:converters="using:Tgm3Visualizer.Converters" x:Class="Tgm3Visualizer.App">
+    
+    <Application.Resources>
+        
+        <ResourceDictionary>
+            
+            <ResourceDictionary.MergedDictionaries>
+                
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>
+                
+                <ResourceDictionary Source="Themes/Generic.xaml"/>
+                
+            </ResourceDictionary.MergedDictionaries>
+            
+            <converters:SectionStatusConverter x:Key="SectionStatusConverter"/>
+            
+            <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+            
+            <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter"/>
+            
+            <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
+            
+            <converters:HighlightToColorConverter x:Key="HighlightToColorConverter"/>
+
+            <converters:CoolRainbowToBrushConverter x:Key="CoolRainbowToBrushConverter"/>
+            
+            <converters:CoolToBrushConverter x:Key="CoolToBrushConverter"/>
+            
+            <converters:RegretToBrushConverter x:Key="RegretToBrushConverter"/>
+
+            <converters:BoolToRedBrushConverter x:Key="BoolToRedBrushConverter"/>
+
+            <converters:SakuraStageStatusToBrushConverter x:Key="SakuraStageStatusToBrushConverter"/>
+            
+        </ResourceDictionary>
+        
+    </Application.Resources>
+    
+</Application>

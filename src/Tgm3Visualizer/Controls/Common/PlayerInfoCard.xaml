@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="Tgm3Visualizer.Controls.Common.PlayerInfoCard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Border Background="{ThemeResource PanelBackgroundBrush}" CornerRadius="6" Height="55" Padding="0, 0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- CLASSIC Section -->
+            <StackPanel Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="4, 0, 0, 0"
+                        Visibility="{x:Bind IsLoggedIn, Mode=OneWay}">
+                <Grid BorderBrush="#CCDDEE" BorderThickness="0,0,0,1" Padding="0, 0, 0, 2">
+                    <TextBlock Text="CLASSIC" FontSize="8" Foreground="#CCDDEE"
+                           HorizontalAlignment="Center" FontWeight="Bold"/>
+                </Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="8" Padding="0, 2, 0, 0">
+                    <StackPanel Width="37">
+                        <TextBlock Text="EASY" FontSize="8" Foreground="#CCDDEE" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Bind ClassicEasyHiScore, Mode=OneWay}"
+                                   Foreground="White" FontSize="11" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Width="37">
+                        <TextBlock Text="MASTER" FontSize="8" Foreground="#CCDDEE" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Bind ClassicMasterGrade, Mode=OneWay}"
+                                   Foreground="White" FontSize="11" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Width="37">
+                        <TextBlock Text="SAKURA" FontSize="8" Foreground="#CCDDEE" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Bind ClassicSakuraGrade, Mode=OneWay}"
+                                   Foreground="White" FontSize="11" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Width="37">
+                        <TextBlock Text="SHIRASE" FontSize="8" Foreground="#CCDDEE" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Bind ClassicShiraseGrade, Mode=OneWay}"
+                                   Foreground="White" FontSize="11" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+
+            <!-- Nickname + Decoration Points -->
+            <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <!-- Main text -->
+                <TextBlock Text="{x:Bind VisibleNickname, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Foreground="White" FontSize="22" FontWeight="Bold" />
+                <TextBlock Text="{x:Bind DecorationPoints, Mode=OneWay}"
+                       Visibility="{x:Bind IsLoggedIn, Mode=OneWay}"
+                       Foreground="White" FontSize="11" FontWeight="Bold" HorizontalAlignment="Center" Padding="0, 0, 0, 6" />
+            </StackPanel>
+
+            <!-- WORLD Section -->
+            <StackPanel Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0, 0, 4, 0"
+                        Visibility="{x:Bind IsLoggedIn, Mode=OneWay}">
+                <Grid BorderBrush="#CCDDEE" BorderThickness="0,0,0,1" Padding="0, 0, 0, 2">
+                    <TextBlock Text="WORLD" FontSize="8" Foreground="#CCDDEE"
+                           HorizontalAlignment="Center" FontWeight="Bold"/>
+                </Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="8" Padding="0, 2, 0, 0">
+                    <StackPanel Width="37">
+                        <TextBlock Text="EASY" FontSize="8" Foreground="#CCDDEE" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Bind WorldEasyHiScore, Mode=OneWay}"
+                                   Foreground="White" FontSize="11" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Width="37">
+                        <TextBlock Text="MASTER" FontSize="8" Foreground="#CCDDEE" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Bind WorldMasterGrade, Mode=OneWay}"
+                                   Foreground="White" FontSize="11" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Width="37">
+                        <TextBlock Text="SAKURA" FontSize="8" Foreground="#CCDDEE" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Bind WorldSakuraGrade, Mode=OneWay}"
+                                   Foreground="White" FontSize="11" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Width="37">
+                        <TextBlock Text="SHIRASE" FontSize="8" Foreground="#CCDDEE" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Bind WorldShiraseGrade, Mode=OneWay}"
+                                   Foreground="White" FontSize="11" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+
+</UserControl>

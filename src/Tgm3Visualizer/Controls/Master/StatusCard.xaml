@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="Tgm3Visualizer.Controls.Master.StatusCard">
+    
+    <Border Background="{ThemeResource PanelBackgroundBrush}" CornerRadius="6" Padding="4" Margin="6,0,0,6">
+        
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            
+            <TextBlock Text="{x:Bind StatusCardTitle, Mode=OneWay}" Foreground="White" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" TextAlignment="Center"/>
+            
+            <TextBlock Text="{x:Bind StatusCardSubtitle, Mode=OneWay}" Foreground="#CCDDEE" FontSize="14" HorizontalAlignment="Center" Visibility="{x:Bind ShowStaffRollTime, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}"/>
+            
+        </StackPanel>
+        
+    </Border>
+    
+</UserControl>

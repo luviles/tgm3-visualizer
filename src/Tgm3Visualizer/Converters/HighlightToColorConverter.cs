@@ -1,0 +1,27 @@
+using Microsoft.UI.Xaml.Data;
+using Microsoft.UI.Xaml.Media;
+using System;
+
+namespace Tgm3Visualizer.Converters;
+
+public class HighlightToColorConverter : IValueConverter
+{
+    private static readonly SolidColorBrush GreenBrush = new(Microsoft.UI.Colors.LimeGreen);
+    private static readonly SolidColorBrush WhiteBrush = new(Microsoft.UI.Colors.White);
+
+    public object Convert(object value, Type targetType, object parameter, string language)
+    {
+        if (value is bool isHighlighted)
+        {
+            return isHighlighted
+                ? GreenBrush
+                : WhiteBrush;
+        }
+        return WhiteBrush;
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, string language)
+    {
+        throw new NotImplementedException();
+    }
+}

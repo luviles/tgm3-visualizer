@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="Tgm3Visualizer.Controls.Shirase.SectionTimerControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:Tgm3Visualizer.ViewModels">
+
+    <StackPanel Spacing="1" HorizontalAlignment="Center">
+        <!-- Header Row -->
+        <Grid BorderBrush="#CCDDEE" BorderThickness="0,0,0,1" Padding="0,8,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="63"/>
+                <ColumnDefinition Width="12"/>
+                <ColumnDefinition Width="61"/>
+                <ColumnDefinition Width="6"/>
+                <ColumnDefinition Width="59"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Section" FontSize="9" Foreground="#CCDDEE"
+                       HorizontalAlignment="Center"/>
+            <TextBlock Grid.Column="2" Text="Section Time" FontSize="9" Foreground="#CCDDEE"
+                       HorizontalAlignment="Center"/>
+            <TextBlock Grid.Column="4" Text="Cumulative" FontSize="9" Foreground="#CCDDEE"
+                       HorizontalAlignment="Center"/>
+        </Grid>
+
+        <!-- Section Rows -->
+        <ListView ItemsSource="{x:Bind Sections, Mode=OneWay}" SelectionMode="None" Padding="0" Margin="0,-2,0,0">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="vm:SectionInfo">
+                    <Grid Padding="0,1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="62"/>
+                            <ColumnDefinition Width="12"/>
+                            <ColumnDefinition Width="62"/>
+                            <ColumnDefinition Width="6"/>
+                            <ColumnDefinition Width="62"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Section -->
+                        <TextBlock Grid.Column="0" Text="{x:Bind Range, Mode=OneWay}"
+                                   FontSize="13" Foreground="#CCDDEE"
+                                   HorizontalAlignment="Center"/>
+
+                        <!-- Section Time: red if Regret, white otherwise -->
+                        <TextBlock Grid.Column="2" Text="{x:Bind Time, Mode=OneWay}"
+                                   Foreground="{x:Bind Status, Mode=OneWay, Converter={StaticResource RegretToBrushConverter}}"
+                                   FontSize="13" FontWeight="Bold"
+                                   HorizontalAlignment="Center"/>
+
+                        <!-- Cumulative Time -->
+                        <TextBlock Grid.Column="4" Text="{x:Bind CumulativeTime, Mode=OneWay}"
+                                   Foreground="White"
+                                   FontSize="13" FontWeight="Bold"
+                                   HorizontalAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
+</UserControl>
