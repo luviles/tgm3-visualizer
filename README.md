@@ -4,7 +4,7 @@
 
 **Real-time memory visualization tool for Tetris: The Grand Master 3**
 
-![WinUI 3](https://img.shields.io/badge/WinUI_3-1.7-green?style=flat-square)
+![WinUI 3](https://img.shields.io/badge/WinUI_3-1.8-green?style=flat-square)
 ![.NET 8.0](https://img.shields.io/badge/.NET-8.0-blue?style=flat-square)
 ![Platform](https://img.shields.io/badge/platform-Windows_x64-orange?style=flat-square)
 
