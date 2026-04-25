@@ -13,26 +13,11 @@ public partial class App : Application
 {
     private Window? _window;
     public IServiceProvider Services { get; }
-    private static string LogFile = string.Empty;
 
     public App()
     {
         Services = ConfigureServices();
         InitializeComponent();
-
-        // Initialize log file
-        LogFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "tgm3_debug.log");
-        File.WriteAllText(LogFile, $"=== TGM3 Visualizer Log Started at {DateTime.Now} ===\n");
-    }
-
-    public static void Log(string message)
-    {
-        var logLine = $"[{DateTime.Now:HH:mm:ss.fff}] {message}";
-        try
-        {
-            File.AppendAllText(LogFile, logLine + "\n");
-        }
-        catch { }
     }
 
     private static IServiceProvider ConfigureServices()
@@ -61,6 +46,5 @@ public partial class App : Application
         // Start timer
         var gameDataService = Services.GetRequiredService<GameDataService>();
         gameDataService.Start();
-        Log("App.OnLaunched - GameDataService.Start() called");
     }
 }
