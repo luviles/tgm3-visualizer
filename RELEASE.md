@@ -1,3 +1,12 @@
+## v1.0.2 — Shirase Section Label Fix
+
+**TGM3 Visualizer** is a real-time memory visualization tool for *Tetris: The Grand Master 3*.
+
+### What's New in v1.0.2
+- **Shirase Section Label Fix:** Corrected Shirase mode's section 9 label from `900-999` to `900-1000`. The `999` endpoint was Master-mode specific (Master mode ends at level 999) but was being applied to Shirase as well, which continues past level 999 toward 1300.
+
+---
+
 ## v1.0.1 — Optimization Update
 
 **TGM3 Visualizer** is a real-time memory visualization tool for *Tetris: The Grand Master 3*.

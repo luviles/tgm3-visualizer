@@ -24,14 +24,18 @@ public static class SectionTimeCalculator
     /// Get section range display text.
     /// Supports Master mode (0-9, 0-999) and Shirase mode (0-12, 0-1299)
     /// </summary>
-    public static string GetSectionRange(int section)
+    /// <param name="isShirase">
+    /// Shirase mode continues past level 999, so section 9 ends at 1000.
+    /// In Master mode section 9 ends at 999 (the level cap).
+    /// </param>
+    public static string GetSectionRange(int section, bool isShirase = false)
     {
         if (section < 0 || section > 12)
             return "???";
 
         var start = section * 100;
-        // Master mode: section 9 ends at 999
-        var end = section == 9 ? 999 : (section + 1) * 100;
+        // Master mode: section 9 ends at 999 (level cap). Shirase continues past 999, so it ends at 1000.
+        var end = section == 9 && !isShirase ? 999 : (section + 1) * 100;
         return $"{start:D3}-{end:D3}";
     }
 }
