@@ -70,7 +70,7 @@ public partial class ShiraseModeViewModel : ModeViewModelBase, ICommonPlayerInfo
         {
             Sections.Add(new SectionInfo
             {
-                Range = SectionTimeCalculator.GetSectionRange(i),
+                Range = SectionTimeCalculator.GetSectionRange(i, isShirase: true),
                 Time = "",
                 Status = SectionStatus.None
             });
