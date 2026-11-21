@@ -1,3 +1,13 @@
+> ## ⚠️ DEPRECATED — superseded by **[TGM3 Overlay](https://github.com/luviles/tgm3-overlay)**
+
+> **This project is no longer maintained.** All development has moved to
+> **[TGM3 Overlay](https://github.com/luviles/tgm3-overlay)** — a Tauri 2 + React 19 + Rust rewrite that is
+> **~25× smaller** (~4.4 MB vs 109 MB), ships with **zero runtime dependencies** (no .NET or VC++ installs),
+> and includes every feature of this tool plus many more.
+>
+> ### ➡️ [Get the current release — TGM3 Overlay v1.0.0](https://github.com/luviles/tgm3-overlay/releases/latest)
+
+---
 <div align="center">
 
 # TGM3 Visualizer
